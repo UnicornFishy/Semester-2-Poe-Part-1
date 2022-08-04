@@ -25,3 +25,10 @@ public abstract class Tile
 
 	//Tile tile = new Tile(5, 7, tileType.Hero);
 }
+public class Obstacle : Tile
+{
+	public Obstacle(int X, int Y, tileType type) : base(Tile)
+    {
+
+    }
+}
