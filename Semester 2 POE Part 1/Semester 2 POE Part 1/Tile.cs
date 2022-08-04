@@ -4,31 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public abstract class Tile
+namespace Semester_2_POE_Part_1
 {
-	protected int x;
-	protected int y;
-	protected tileType type;
-
-	public int X { get { return x; } set { x = value; } };
-	public int Y { get { return y; } set { y = value; } };
-
-	public enum tileType { Hero, Enemy, Gold, weapon };
-
-	public Tile(int X,int Y, tileType type)
+	public abstract class Tile
 	{
-		this.x = X;
-		this.y = y;
-		this.type = type;
-	}
+		protected int x;
+		protected int y;
+		protected tileType type;
 
-	//Tile tile = new Tile(5, 7, tileType.Hero);
-}
-public class Obstacle : Tile
-{
-	public Obstacle(int X, int Y, tileType type) : base(Tile)
-    {
+		public int X { get { return x; } set { x = value; } }
+		public int Y { get { return y; } set { y = value; } }
 
+		public enum tileType { Hero, Enemy, Gold, weapon };
+
+		public Tile(int X, int Y, tileType type)
+		{
+			this.x = X;
+			this.y = Y;
+			this.type = type;
+		}
+
+        protected Tile(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        //Tile tile = new Tile(5, 7, tileType.Hero);
     }
 }
