@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Semester_2_POE_Part_1
 {
     public class Obstacle : Tile
-    {
+    { 
         public Obstacle(int X, int Y) : base(X,Y)
         {
-
+            
         }
     }
 }

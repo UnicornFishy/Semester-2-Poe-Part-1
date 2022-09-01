@@ -30,6 +30,11 @@ namespace Semester_2_POE_Part_1
             this.y = y;
         }
 
+		protected Tile()
+        {
+
+        }
+
         //Tile tile = new Tile(5, 7, tileType.Hero);
     }
 }
