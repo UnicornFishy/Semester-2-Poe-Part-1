@@ -10,12 +10,21 @@ namespace Semester_2_POE_Part_1
 	{
 		protected int x;
 		protected int y;
+		protected string symbol;
 		protected tileType type;
 
 		public int X { get { return x; } set { x = value; } }
 		public int Y { get { return y; } set { y = value; } }
+		public string Symbol { get { return symbol; } set { symbol = value; } }
 
 		public enum tileType { Hero, Enemy, Gold, weapon };
+
+		public Tile(int X, int Y, string symbol)
+		{
+			this.x = X;
+			this.y = Y;
+			this.symbol = symbol;
+		}
 
 		public Tile(int X, int Y, tileType type)
 		{
@@ -24,7 +33,14 @@ namespace Semester_2_POE_Part_1
 			this.type = type;
 		}
 
-        protected Tile(int x, int y)
+		public Tile(int X, int Y, string symbol, tileType type)
+		{
+			this.x = X;
+			this.y = Y;
+			this.symbol = symbol;
+		}
+
+		protected Tile(int x, int y)
         {
             this.x = x;
             this.y = y;
