@@ -23,5 +23,12 @@ namespace Semester_2_POE_Part_1
             enemies = new Enemy[enemyNumber];
             
         }
+
+        public void UpdateVision()
+        {
+
+        }
+
+
     }
 }
