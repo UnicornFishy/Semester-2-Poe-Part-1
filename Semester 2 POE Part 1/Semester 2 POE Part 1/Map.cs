@@ -37,7 +37,7 @@ namespace Semester_2_POE_Part_1
 
         public void UpdateVision()
         {
-
+            
         }
 
         private Tile Create(Tile.tileType type)
@@ -47,6 +47,11 @@ namespace Semester_2_POE_Part_1
             {
                 int X = random.Next(mapHeight);
                 int Y = random.Next(mapWidth);
+
+                if (map[X,Y] == null)
+                {
+                    validPosition = true;
+                }
 
             } while (validPosition == false);
 
