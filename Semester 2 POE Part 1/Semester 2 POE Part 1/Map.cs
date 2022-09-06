@@ -13,6 +13,15 @@ namespace Semester_2_POE_Part_1
         private int mapWidth;
         private Enemy[] enemies;
         private Hero hero;
-        private Random random;
+        private Random random = new Random();
+
+        public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
+        {
+            this.mapHeight = random.Next(minHeight,maxHeight);
+            this.mapWidth = random.Next(minWidth,maxWidth);
+            map = new Tile[mapHeight,mapWidth];
+            enemies = new Enemy[enemyNumber];
+            
+        }
     }
 }
