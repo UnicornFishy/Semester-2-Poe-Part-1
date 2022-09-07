@@ -33,20 +33,48 @@ namespace Semester_2_POE_Part_1
                     
                 }
             }
+
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i] = (Enemy)Create(Tile.tileType.Enemy);
+            }
+
+            hero = (Hero)Create(Tile.tileType.Hero);
+
+            map[hero.X, hero.Y] = hero;
         }
 
         public void UpdateVision()
         {
-            
+            Tile[] heroVision = new Tile[4];
+            heroVision[0] = map[hero.X-1,hero.Y];
+            heroVision[1] = map[hero.X+1,hero.Y];
+            heroVision[2] = map[hero.X,hero.Y+1];
+            heroVision[3] = map[hero.X,hero.Y-1];
+
+            // hero.SetVision(heroVision);
+
+            foreach (Enemy enemy in enemies)
+            {
+                Tile[] enemyVision = new Tile[4];
+                enemyVision[0] = map[enemy.X - 1, enemy.Y];
+                enemyVision[1] = map[enemy.X + 1, enemy.Y];
+                enemyVision[2] = map[enemy.X, enemy.Y + 1];
+                enemyVision[3] = map[enemy.X, enemy.Y - 1];
+
+               // enemy.SetVision(enemyVision);
+            }
         }
 
         private Tile Create(Tile.tileType type)
         {
+            int X;
+            int Y;
             bool validPosition = false;
             do
             {
-                int X = random.Next(mapHeight);
-                int Y = random.Next(mapWidth);
+                X = random.Next(mapHeight);
+                Y = random.Next(mapWidth);
 
                 if (map[X,Y] == null)
                 {
@@ -55,9 +83,19 @@ namespace Semester_2_POE_Part_1
 
             } while (validPosition == false);
 
-            
-
-            return null;
+            switch (type)
+            {
+                case Tile.tileType.Hero:
+                    return new Hero(X, Y, 2, 10, 10, "H");
+                case Tile.tileType.Enemy:
+                    return new SwampCreature(X,Y);
+                case Tile.tileType.Gold:
+                    return null;
+                case Tile.tileType.weapon:
+                    return null;
+                default:
+                    return null;
+            }
         }
     }
 }

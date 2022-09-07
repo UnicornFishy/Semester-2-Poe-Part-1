@@ -8,5 +8,9 @@ namespace Semester_2_POE_Part_1
 {
     internal class GameEngine
     {
+        private Map map;
+        public Map getMap() { return map; }
+
+        
     }
 }
