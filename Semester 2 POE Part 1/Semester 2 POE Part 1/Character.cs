@@ -73,19 +73,33 @@ namespace Semester_2_POE_Part_1
             return false;
         }
 
-        public virtual bool CheckRange()
+        public virtual bool CheckRange(Character target)
         {
             //needs to return true or false
-            return true;
+
+            
+            if(DistanceTo(target) > 1)
+            {
+                return false;
+            }
+            else if(DistanceTo(target) <= 1 && DistanceTo(target)>0)
+            {
+                return true;
+            }
+
+            return false;
+
         }
 
-        private int distanceTo(Character Target)
+        private int DistanceTo(Character Target)
         {
-            //private int diagnal = 2;
-            //private int vertical = 1;
-            //private int horozontal = 1;
+            int distX;
+            int distY;
 
-            return 2;
+            distX = Math.Abs(Target.X - this.X);
+            distY = Math.Abs(Target.Y = this.Y);
+
+            return distX + distY;
         }
 
         public abstract override string ToString();
