@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Semester_2_POE_Part_1
 {
-     public class Enemy : Character
+     internal class Enemy : Character
     {
         public override movement ReturnMove(movement enemyMovement)
         {
@@ -32,7 +32,7 @@ namespace Semester_2_POE_Part_1
     }
      class SwampCreature : Enemy
     {
-        protected SwampCreature(int X, int Y) : base(X, Y, 10, 10, 1, "SC")
+        public SwampCreature(int X, int Y) : base(X, Y, 10, 10, 1, "SC")
         {
 
         }

@@ -41,26 +41,28 @@ namespace Semester_2_POE_Part_1
 
             hero = (Hero)Create(Tile.tileType.Hero);
 
-            map[hero.X, hero.Y] = hero;
+
         }
 
         public void UpdateVision()
         {
-            Tile[] heroVision = new Tile[4];
-            heroVision[0] = map[hero.X-1,hero.Y];
-            heroVision[1] = map[hero.X+1,hero.Y];
-            heroVision[2] = map[hero.X,hero.Y+1];
-            heroVision[3] = map[hero.X,hero.Y-1];
+            Tile[] heroVision = new Tile[5];
+            heroVision[0] = map[hero.X+1,hero.Y];
+            heroVision[1] = map[hero.X-1,hero.Y];
+            heroVision[2] = map[hero.X,hero.Y-1];
+            heroVision[3] = map[hero.X,hero.Y+1];
+            heroVision[5] = map[hero.X,hero.Y];
 
             // hero.SetVision(heroVision);
 
             foreach (Enemy enemy in enemies)
             {
-                Tile[] enemyVision = new Tile[4];
-                enemyVision[0] = map[enemy.X - 1, enemy.Y];
-                enemyVision[1] = map[enemy.X + 1, enemy.Y];
-                enemyVision[2] = map[enemy.X, enemy.Y + 1];
-                enemyVision[3] = map[enemy.X, enemy.Y - 1];
+                Tile[] enemyVision = new Tile[5];
+                enemyVision[0] = map[enemy.X + 1, enemy.Y];
+                enemyVision[1] = map[enemy.X - 1, enemy.Y];
+                enemyVision[2] = map[enemy.X, enemy.Y - 1];
+                enemyVision[3] = map[enemy.X, enemy.Y + 1];
+                enemyVision[4] = map[enemy.X, enemy.Y];
 
                // enemy.SetVision(enemyVision);
             }

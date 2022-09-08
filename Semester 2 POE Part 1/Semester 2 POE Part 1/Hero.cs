@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Semester_2_POE_Part_1
 {
-    public class Hero : Character
+    internal class Hero : Character
     {
 
-        protected Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, HP, MaxHP, DAMAGE, "H")
+        public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, HP, MaxHP, DAMAGE, "H")
         {
 
         }

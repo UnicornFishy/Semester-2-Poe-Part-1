@@ -11,6 +11,10 @@ namespace Semester_2_POE_Part_1
         private Map map;
         public Map getMap() { return map; }
 
-        
+        public bool MovePlayer(Character.movement move)
+        {
+            
+            return false;
+        }
     }
 }
