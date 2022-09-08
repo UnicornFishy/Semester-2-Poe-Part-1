@@ -41,31 +41,27 @@ namespace Semester_2_POE_Part_1
 
             hero = (Hero)Create(Tile.tileType.Hero);
 
-
-        }
-
-        public void UpdateVision()
-        {
-            Tile[] heroVision = new Tile[5];
-            heroVision[0] = map[hero.X+1,hero.Y];
-            heroVision[1] = map[hero.X-1,hero.Y];
-            heroVision[2] = map[hero.X,hero.Y-1];
-            heroVision[3] = map[hero.X,hero.Y+1];
-            heroVision[5] = map[hero.X,hero.Y];
-
-            // hero.SetVision(heroVision);
-
+            UpdateVision(hero);
             foreach (Enemy enemy in enemies)
             {
-                Tile[] enemyVision = new Tile[5];
-                enemyVision[0] = map[enemy.X + 1, enemy.Y];
-                enemyVision[1] = map[enemy.X - 1, enemy.Y];
-                enemyVision[2] = map[enemy.X, enemy.Y - 1];
-                enemyVision[3] = map[enemy.X, enemy.Y + 1];
-                enemyVision[4] = map[enemy.X, enemy.Y];
-
-               // enemy.SetVision(enemyVision);
+                UpdateVision(enemy);
             }
+        }
+
+        public void UpdateVision(Character character)
+        {
+            Tile[] tmp = new Tile[4];
+
+            //up
+            tmp[0] = map[character.X, character.Y + 1];
+            //down
+            tmp[1] = map[character.X, character.Y - 1];
+            //left
+            tmp[2] = map[character.X - 1, character.Y];
+            //right
+            tmp[3] = map[character.X + 1, character.Y];
+
+            character.VISION = tmp;
         }
 
         private Tile Create(Tile.tileType type)
@@ -92,9 +88,9 @@ namespace Semester_2_POE_Part_1
                 case Tile.tileType.Enemy:
                     return new SwampCreature(X,Y);
                 case Tile.tileType.Gold:
-                    return null;
+                    return null;                //these return null because we have not implemented gold or weapons in the game yet
                 case Tile.tileType.weapon:
-                    return null;
+                    return null;                //these return null because we have not implemented gold or weapons in the game yet
                 default:
                     return null;
             }

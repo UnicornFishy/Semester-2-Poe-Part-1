@@ -17,23 +17,14 @@ namespace Semester_2_POE_Part_1
 
         public int Damage { get { return damage; } set { damage = value; } }
 
-        protected List<Tile> vision = new List<Tile>();
+        protected Tile[] vision = new Tile[4];
         protected tileType tile;
 
-        public List<Tile> VISION { get { return vision; } set { vision = value; } }
+        public Tile[] VISION { get { return vision; } set { vision = value; } }
 
         //private List<Tile> Vision{ get { return vision; }set { vision = value; }}
         public tileType Tile { get { return tile; } set { tile = value; } }
 
-        public void SetVision(Tile[,] characterSight)
-        {
-            this.VISION.Clear();                                    //postions in the list array
-            this.VISION.Add(characterSight[this.X + 1,this.Y]);     //0
-            this.VISION.Add(characterSight[this.X - 1,this.Y]);     //1
-            this.VISION.Add(characterSight[this.X, this.Y - 1]);    //2
-            this.VISION.Add(characterSight[this.X, this.Y + 1]);    //3
-            this.VISION.Add(characterSight[this.X, this.Y]);        //4
-        }
 
         private movement Movement;
         public movement MOVEMENT { get { return Movement; } set { Movement = value; } }

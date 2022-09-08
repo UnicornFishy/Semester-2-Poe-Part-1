@@ -13,7 +13,19 @@ namespace Semester_2_POE_Part_1
 
         public bool MovePlayer(Character.movement move)
         {
-            
+            switch(move)
+            {
+                case Character.movement.NoMovement:
+                    break;
+                case Character.movement.up:
+                    break;
+                case Character.movement.down:
+                    break;
+                case Character.movement.right:
+                    break;
+                case Character.movement.left:
+                    break;
+            }
             return false;
         }
     }
