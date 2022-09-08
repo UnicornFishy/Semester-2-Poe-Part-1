@@ -27,42 +27,42 @@ namespace Semester_2_POE_Part_1
         {
             if(heroMovement == movement.right)
             {
-                if (!(this.VISION[3] is Enemy) || !(this.VISION[3] is Obstacle))
+                if (!(this.VISION[3] is Enemy) && !(this.VISION[3] is Obstacle))
                 {
                     heroMovement = movement.right;
                 }
+                else heroMovement = movement.NoMovement;
             }
-
-            if(heroMovement == movement.left)
+            else if(heroMovement == movement.left)
             {
-                if (!(this.VISION[2] is Enemy) || !(this.VISION[2] is Obstacle))
+                if (!(this.VISION[2] is Enemy) && !(this.VISION[2] is Obstacle))
                 {
                     heroMovement = movement.left;
                 }
-            }
+                else heroMovement = movement.NoMovement;
 
-            if (heroMovement == movement.up)
+            }
+            else if (heroMovement == movement.up)
             {
-                if (!(this.VISION[0] is Enemy) || !(this.VISION[0] is Obstacle))
+                if (!(this.VISION[0] is Enemy) && !(this.VISION[0] is Obstacle))
                 {
                     heroMovement = movement.up;
                 }
-            }
+                else heroMovement = movement.NoMovement;
 
-            if (heroMovement == movement.down)
+            }
+            else if (heroMovement == movement.down)
             {
-                if (!(this.VISION[1] is Enemy) || !(this.VISION[1] is Obstacle))
+                if (!(this.VISION[1] is Enemy) && !(this.VISION[1] is Obstacle))
                 {
                     heroMovement = movement.down;
                 }
-            }
+                else heroMovement = movement.NoMovement;
 
-            if (heroMovement == movement.NoMovement)
+            }
+            else if (heroMovement == movement.NoMovement)
             {
-                if (!(this.VISION[4] is Enemy) || !(this.VISION[4] is Obstacle))
-                {
-                    heroMovement = movement.NoMovement;
-                }
+                heroMovement = movement.NoMovement;
             }
 
             return heroMovement;

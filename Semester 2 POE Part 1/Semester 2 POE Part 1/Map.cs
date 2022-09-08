@@ -15,6 +15,8 @@ namespace Semester_2_POE_Part_1
         private Hero hero;
         private Random random = new Random();
 
+        public Hero Hero { get { return hero; } set { hero = value; } }
+
         public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
         {
             this.mapHeight = random.Next(minHeight,maxHeight);

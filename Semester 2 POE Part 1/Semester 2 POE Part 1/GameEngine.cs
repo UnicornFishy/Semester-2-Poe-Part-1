@@ -16,8 +16,10 @@ namespace Semester_2_POE_Part_1
             switch(move)
             {
                 case Character.movement.NoMovement:
+                    return true;
                     break;
                 case Character.movement.up:
+                    map.Hero.Move(map.Hero.ReturnMove(Character.movement.up));
                     break;
                 case Character.movement.down:
                     break;
