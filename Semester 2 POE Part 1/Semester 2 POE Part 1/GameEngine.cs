@@ -13,22 +13,20 @@ namespace Semester_2_POE_Part_1
 
         public bool MovePlayer(Character.movement move)
         {
-            switch(move)
+            if (move == Character.movement.NoMovement) return false;
+
+            Character.movement dir = map.Hero.ReturnMove(move);
+            if (dir == move)
             {
-                case Character.movement.NoMovement:
-                    return true;
-                    break;
-                case Character.movement.up:
-                    map.Hero.Move(map.Hero.ReturnMove(Character.movement.up));
-                    break;
-                case Character.movement.down:
-                    break;
-                case Character.movement.right:
-                    break;
-                case Character.movement.left:
-                    break;
+                map.Hero.Move(move);
+                return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+
+            
         }
     }
 }
