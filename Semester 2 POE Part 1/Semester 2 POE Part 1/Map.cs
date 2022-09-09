@@ -30,7 +30,7 @@ namespace Semester_2_POE_Part_1
                 {
                     if (i == 0 || i == mapHeight - 1 || j == 0 || j == mapWidth - 1)
                     {
-                        map[i, j] = new Obstacle(i, j);
+                        map[i, j] = new Obstacle(i, j, "X");
                     }
                     
                 }
@@ -48,6 +48,8 @@ namespace Semester_2_POE_Part_1
             {
                 UpdateVision(enemy);
             }
+
+            MapFill();
         }
 
         public void UpdateVision(Character character)
@@ -95,6 +97,20 @@ namespace Semester_2_POE_Part_1
                     return null;                //these return null because we have not implemented gold or weapons in the game yet
                 default:
                     return null;
+            }
+        }
+
+        public void MapFill()
+        {
+            for (int x = 0; x < mapWidth; x++)
+            {
+                for (int y = 0; y < mapHeight; y++)
+                {
+                    if (map[x,y] == null)
+                    {
+                        map[x,y] = new EmptyTile(x,y);
+                    }
+                }
             }
         }
     }
