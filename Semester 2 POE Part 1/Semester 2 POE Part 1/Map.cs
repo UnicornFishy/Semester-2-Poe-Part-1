@@ -131,9 +131,9 @@ namespace Semester_2_POE_Part_1
 
         public void MapFill()
         {
-            for (int x = 0; x < mapWidth; x++)
+            for (int x = 0; x < mapHeight; x++)
             {
-                for (int y = 0; y < mapHeight; y++)
+                for (int y = 0; y < mapWidth; y++)
                 {
                     if (map[x,y] == null)
                     {

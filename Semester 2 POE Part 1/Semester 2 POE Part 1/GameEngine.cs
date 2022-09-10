@@ -13,7 +13,7 @@ namespace Semester_2_POE_Part_1
 
         public GameEngine()
         {
-            gameMap = new Map(10, 10, 10, 10, 3);
+            gameMap = new Map(5, 17, 5, 13, 5);
         }
 
         public bool MovePlayer(Character.movement move)
