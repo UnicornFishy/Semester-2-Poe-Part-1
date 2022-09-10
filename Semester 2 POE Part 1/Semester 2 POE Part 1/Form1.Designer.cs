@@ -48,6 +48,7 @@
             this.upButton.TabIndex = 0;
             this.upButton.Text = "Up";
             this.upButton.UseVisualStyleBackColor = true;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
             // leftButton
             // 
@@ -69,6 +70,7 @@
             this.downButton.TabIndex = 2;
             this.downButton.Text = "Down";
             this.downButton.UseVisualStyleBackColor = true;
+            this.downButton.Click += new System.EventHandler(this.downButton_Click);
             // 
             // rightButton
             // 
@@ -79,6 +81,7 @@
             this.rightButton.TabIndex = 3;
             this.rightButton.Text = "Right";
             this.rightButton.UseVisualStyleBackColor = true;
+            this.rightButton.Click += new System.EventHandler(this.rightButton_Click);
             // 
             // mapDisplayTextBox
             // 

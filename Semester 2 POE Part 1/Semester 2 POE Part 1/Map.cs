@@ -29,6 +29,16 @@ namespace Semester_2_POE_Part_1
         {
             return map[X, Y].Symbol;
         }
+
+        public Tile[,] GetMap()
+        {
+            return map;
+        }
+
+        public Enemy[] GetEnemies()
+        {
+            return enemies;
+        }
         public Hero Hero { get { return hero; } set { hero = value; } }
 
         public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
@@ -59,6 +69,8 @@ namespace Semester_2_POE_Part_1
             hero = (Hero)Create(Tile.tileType.Hero);
 
             map[hero.X, hero.Y] = hero;
+            
+            MapFill();
 
             UpdateVision(hero);
             
@@ -67,7 +79,6 @@ namespace Semester_2_POE_Part_1
                 UpdateVision(enemies[i]);
             }
 
-            MapFill();
         }
 
         public void UpdateVision(Character character)
@@ -81,7 +92,7 @@ namespace Semester_2_POE_Part_1
             //left
             character.VISION[2] = map[character.X, character.Y-1];
             //right
-            character.VISION[3] = map[character.X + 1, character.Y+1];
+            character.VISION[3] = map[character.X, character.Y+1];
 
 
         }

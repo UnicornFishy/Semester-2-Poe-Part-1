@@ -20,9 +20,9 @@ namespace Semester_2_POE_Part_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            engine = new GameEngine();
+            engine = new GameEngine();            
 
-            DisplayMap();
+            DisplayMap();           
         }
 
         private void EnemyStatsTextbox_TextChanged(object sender, EventArgs e)
@@ -48,10 +48,6 @@ namespace Semester_2_POE_Part_1
         }
 
 
-        private void leftButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void DisplayMap()
         {
@@ -64,6 +60,35 @@ namespace Semester_2_POE_Part_1
                 }
                 mapDisplayTextBox.Text += Environment.NewLine;
             }
+
+            playerStatsLabel.Text = engine.getMap().Hero.ToString();
+        }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            engine.MovePlayer(Character.movement.up);
+            engine.getMap().MapFill();
+            DisplayMap();
+        }
+
+        private void downButton_Click(object sender, EventArgs e)
+        {
+            engine.MovePlayer(Character.movement.down);
+            engine.getMap().MapFill(); 
+            DisplayMap();
+        }
+
+        private void rightButton_Click(object sender, EventArgs e)
+        {
+            engine.MovePlayer(Character.movement.right);
+            engine.getMap().MapFill();
+            DisplayMap();
+        }
+        private void leftButton_Click(object sender, EventArgs e)
+        {
+            engine.MovePlayer(Character.movement.left);
+            engine.getMap().MapFill();
+            DisplayMap();
         }
     }
 }

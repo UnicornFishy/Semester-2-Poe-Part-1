@@ -9,7 +9,7 @@ namespace Semester_2_POE_Part_1
     internal class Hero : Character
     {
 
-        public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, HP, MaxHP, DAMAGE, "H ")
+        public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, DAMAGE, HP, MaxHP, "H ")
         {
 
         }
@@ -17,7 +17,7 @@ namespace Semester_2_POE_Part_1
         {
             //takes an displays the players information
             string heroInfo = "The heros stats: \n";
-            heroInfo += "Hp: " + HP.ToString() + maxHp.ToString() + "\n";
+            heroInfo += "Hp: " + HP.ToString() +"/"+ maxHp.ToString() + "\n";
             heroInfo += "Damage is: " + Damage.ToString() + "\n";
             heroInfo += "Coordinates: [" + X.ToString() + "," + Y.ToString() + "]";
 

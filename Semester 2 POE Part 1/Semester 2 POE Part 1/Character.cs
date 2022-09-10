@@ -39,20 +39,19 @@ namespace Semester_2_POE_Part_1
                     break;
 
                 case movement.up:
-                    this.X = X--;
+                    X--;
                     break;
 
                 case movement.down:
-                    this.X = X++;
-
+                    X++;
                     break;
 
                 case movement.right:
-                    this.Y = Y++;
+                    Y++;
                     break;
 
                 case movement.left:
-                    this.Y = Y--;
+                    Y--;
                     break;
             }
         }
