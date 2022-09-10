@@ -19,7 +19,7 @@ namespace Semester_2_POE_Part_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Map m = new Map(10, 10, 10, 10, 3); 
         }
 
     }
