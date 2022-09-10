@@ -28,14 +28,14 @@ namespace Semester_2_POE_Part_1
         private void EnemyStatsTextbox_TextChanged(object sender, EventArgs e)
         {
             EnemyStatsTextbox.Text += "/n";
-            EnemyStatsTextbox.Text += Enemy.ToString(enemyInfo);
+            //EnemyStatsTextbox.Text += Enemy.ToString(enemyInfo);
         }
 
         private void attackEnemyButton_Click(object sender, EventArgs e)
         {
-            if(Character.CheckRange() == true)
+            //if(Character.CheckRange() == true)
             {
-                Character.Attack();
+                //Character.Attack();
             }
         }
 

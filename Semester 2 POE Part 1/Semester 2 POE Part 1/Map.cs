@@ -53,9 +53,12 @@ namespace Semester_2_POE_Part_1
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i] = (Enemy)Create(Tile.tileType.Enemy);
+                map[enemies[i].X, enemies[i].Y] = enemies[i];
             }
 
             hero = (Hero)Create(Tile.tileType.Hero);
+
+            map[hero.X, hero.Y] = hero;
 
             UpdateVision(hero);
             
@@ -123,7 +126,7 @@ namespace Semester_2_POE_Part_1
                 {
                     if (map[x,y] == null)
                     {
-                        map[x,y] = new EmptyTile(x,y);
+                        map[x,y] = new EmptyTile(x,y," . ");
                     }
                 }
             }

@@ -83,6 +83,7 @@
             // mapDisplayTextBox
             // 
             this.mapDisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mapDisplayTextBox.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mapDisplayTextBox.Location = new System.Drawing.Point(80, 40);
             this.mapDisplayTextBox.Multiline = true;
             this.mapDisplayTextBox.Name = "mapDisplayTextBox";

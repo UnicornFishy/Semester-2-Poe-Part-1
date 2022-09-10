@@ -13,7 +13,7 @@ namespace Semester_2_POE_Part_1
             
         }
 
-        public Obstacle(int X, int Y, string symbol) : base(X, Y, "X")
+        public Obstacle(int X, int Y, string symbol) : base(X, Y, "X ")
         {
 
         }

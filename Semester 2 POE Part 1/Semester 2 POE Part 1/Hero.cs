@@ -9,7 +9,7 @@ namespace Semester_2_POE_Part_1
     internal class Hero : Character
     {
 
-        public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, HP, MaxHP, DAMAGE, "H")
+        public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, HP, MaxHP, DAMAGE, "H ")
         {
 
         }
