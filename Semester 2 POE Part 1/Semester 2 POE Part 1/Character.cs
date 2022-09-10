@@ -20,7 +20,7 @@ namespace Semester_2_POE_Part_1
         protected Tile[] vision = new Tile[4];
         protected tileType tile;
 
-        public Tile[] VISION { get { return vision; } set { vision = value; } }
+        public Tile[] VISION { get { return vision; } set { vision = value; } }     //vision [ 0 , 1 , 2 , 3 ] = { up, down, left, right }
 
         //private List<Tile> Vision{ get { return vision; }set { vision = value; }}
         public tileType Tile { get { return tile; } set { tile = value; } }
