@@ -58,6 +58,7 @@
             this.leftButton.TabIndex = 1;
             this.leftButton.Text = "Left";
             this.leftButton.UseVisualStyleBackColor = true;
+            this.leftButton.Click += new System.EventHandler(this.leftButton_Click);
             // 
             // downButton
             // 
@@ -132,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 456);
             this.Controls.Add(this.attackEnemyButton);
             this.Controls.Add(this.SelectEnemyDropDownList);
             this.Controls.Add(this.EnemyStatsTextbox);

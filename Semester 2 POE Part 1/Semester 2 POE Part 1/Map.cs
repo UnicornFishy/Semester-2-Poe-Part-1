@@ -15,6 +15,20 @@ namespace Semester_2_POE_Part_1
         private Hero hero;
         private Random random = new Random();
 
+        public int GetMapHeight()
+        {
+            return mapHeight;
+        }
+
+        public int GetMapWidth()
+        {
+            return mapWidth;
+        }
+
+        public string GetSymbol(int X, int Y)
+        {
+            return map[X, Y].Symbol;
+        }
         public Hero Hero { get { return hero; } set { hero = value; } }
 
         public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
@@ -44,6 +58,7 @@ namespace Semester_2_POE_Part_1
             hero = (Hero)Create(Tile.tileType.Hero);
 
             UpdateVision(hero);
+            
             for (int i = 0; i < enemies.Length; i++)
             {
                 UpdateVision(enemies[i]);

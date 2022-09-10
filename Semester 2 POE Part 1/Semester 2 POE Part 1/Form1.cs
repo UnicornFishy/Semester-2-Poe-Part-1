@@ -12,6 +12,7 @@ namespace Semester_2_POE_Part_1
 {
     public partial class Form1 : Form
     {
+        GameEngine engine;
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,9 @@ namespace Semester_2_POE_Part_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Map m = new Map(10, 10, 10, 10, 3); 
+            engine = new GameEngine();
+
+            DisplayMap();
         }
 
         private void EnemyStatsTextbox_TextChanged(object sender, EventArgs e)
@@ -41,6 +44,25 @@ namespace Semester_2_POE_Part_1
             if(SelectEnemyDropDownList.Text == "Swamp Creature")
             {
                 //idk man f this
+            }
+        }
+
+
+        private void leftButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DisplayMap()
+        {
+            mapDisplayTextBox.Clear();
+            for (int i = 0; i < engine.getMap().GetMapHeight(); i++)
+            {
+                for (int j = 0; j < engine.getMap().GetMapWidth(); j++)
+                {
+                    mapDisplayTextBox.Text += engine.getMap().GetSymbol(i, j);
+                }
+                mapDisplayTextBox.Text += Environment.NewLine;
             }
         }
     }
