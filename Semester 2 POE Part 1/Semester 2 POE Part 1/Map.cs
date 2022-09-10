@@ -57,13 +57,13 @@ namespace Semester_2_POE_Part_1
            
 
             //up
-            character.VISION[0] = map[character.X, character.Y + 1];
+            character.VISION[0] = map[character.X - 1, character.Y];
             //down
-            character.VISION[1] = map[character.X, character.Y - 1];
+            character.VISION[1] = map[character.X+ 1, character.Y];
             //left
-            character.VISION[2] = map[character.X - 1, character.Y];
+            character.VISION[2] = map[character.X, character.Y-1];
             //right
-            character.VISION[3] = map[character.X + 1, character.Y];
+            character.VISION[3] = map[character.X + 1, character.Y+1];
 
 
         }
