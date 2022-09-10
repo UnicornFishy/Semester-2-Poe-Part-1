@@ -34,12 +34,15 @@
             this.rightButton = new System.Windows.Forms.Button();
             this.mapDisplayTextBox = new System.Windows.Forms.TextBox();
             this.playerStatsLabel = new System.Windows.Forms.Label();
+            this.EnemyStatsTextbox = new System.Windows.Forms.RichTextBox();
+            this.SelectEnemyDropDownList = new System.Windows.Forms.ComboBox();
+            this.attackEnemyButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // upButton
             // 
             this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.upButton.Location = new System.Drawing.Point(559, 223);
+            this.upButton.Location = new System.Drawing.Point(471, 223);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(76, 70);
             this.upButton.TabIndex = 0;
@@ -49,7 +52,7 @@
             // leftButton
             // 
             this.leftButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.leftButton.Location = new System.Drawing.Point(467, 311);
+            this.leftButton.Location = new System.Drawing.Point(379, 311);
             this.leftButton.Name = "leftButton";
             this.leftButton.Size = new System.Drawing.Size(76, 70);
             this.leftButton.TabIndex = 1;
@@ -59,7 +62,7 @@
             // downButton
             // 
             this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.downButton.Location = new System.Drawing.Point(559, 311);
+            this.downButton.Location = new System.Drawing.Point(471, 311);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(76, 70);
             this.downButton.TabIndex = 2;
@@ -69,7 +72,7 @@
             // rightButton
             // 
             this.rightButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rightButton.Location = new System.Drawing.Point(652, 311);
+            this.rightButton.Location = new System.Drawing.Point(564, 311);
             this.rightButton.Name = "rightButton";
             this.rightButton.Size = new System.Drawing.Size(76, 70);
             this.rightButton.TabIndex = 3;
@@ -89,17 +92,50 @@
             // playerStatsLabel
             // 
             this.playerStatsLabel.AutoSize = true;
-            this.playerStatsLabel.Location = new System.Drawing.Point(488, 46);
+            this.playerStatsLabel.Location = new System.Drawing.Point(415, 40);
             this.playerStatsLabel.Name = "playerStatsLabel";
             this.playerStatsLabel.Size = new System.Drawing.Size(180, 16);
             this.playerStatsLabel.TabIndex = 5;
             this.playerStatsLabel.Text = "Player stats comes here wow";
+            // 
+            // EnemyStatsTextbox
+            // 
+            this.EnemyStatsTextbox.Location = new System.Drawing.Point(643, 40);
+            this.EnemyStatsTextbox.Name = "EnemyStatsTextbox";
+            this.EnemyStatsTextbox.Size = new System.Drawing.Size(145, 192);
+            this.EnemyStatsTextbox.TabIndex = 6;
+            this.EnemyStatsTextbox.Text = "";
+            this.EnemyStatsTextbox.TextChanged += new System.EventHandler(this.EnemyStatsTextbox_TextChanged);
+            // 
+            // SelectEnemyDropDownList
+            // 
+            this.SelectEnemyDropDownList.FormattingEnabled = true;
+            this.SelectEnemyDropDownList.Items.AddRange(new object[] {
+            "Swamp Creature"});
+            this.SelectEnemyDropDownList.Location = new System.Drawing.Point(652, 247);
+            this.SelectEnemyDropDownList.Name = "SelectEnemyDropDownList";
+            this.SelectEnemyDropDownList.Size = new System.Drawing.Size(121, 24);
+            this.SelectEnemyDropDownList.TabIndex = 7;
+            this.SelectEnemyDropDownList.SelectedIndexChanged += new System.EventHandler(this.SelectEnemy_SelectedIndexChanged);
+            // 
+            // attackEnemyButton
+            // 
+            this.attackEnemyButton.Location = new System.Drawing.Point(678, 292);
+            this.attackEnemyButton.Name = "attackEnemyButton";
+            this.attackEnemyButton.Size = new System.Drawing.Size(75, 23);
+            this.attackEnemyButton.TabIndex = 8;
+            this.attackEnemyButton.Text = "Attack";
+            this.attackEnemyButton.UseVisualStyleBackColor = true;
+            this.attackEnemyButton.Click += new System.EventHandler(this.attackEnemyButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.attackEnemyButton);
+            this.Controls.Add(this.SelectEnemyDropDownList);
+            this.Controls.Add(this.EnemyStatsTextbox);
             this.Controls.Add(this.playerStatsLabel);
             this.Controls.Add(this.mapDisplayTextBox);
             this.Controls.Add(this.rightButton);
@@ -122,6 +158,9 @@
         private System.Windows.Forms.Button rightButton;
         private System.Windows.Forms.TextBox mapDisplayTextBox;
         private System.Windows.Forms.Label playerStatsLabel;
+        private System.Windows.Forms.RichTextBox EnemyStatsTextbox;
+        private System.Windows.Forms.ComboBox SelectEnemyDropDownList;
+        private System.Windows.Forms.Button attackEnemyButton;
     }
 }
 

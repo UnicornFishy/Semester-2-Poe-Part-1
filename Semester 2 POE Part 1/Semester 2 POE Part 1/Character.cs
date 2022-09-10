@@ -59,9 +59,9 @@ namespace Semester_2_POE_Part_1
 
         public abstract movement ReturnMove(movement move = 0);
 
-        public virtual void Attack(Character Target)
+        public virtual void Attack(Character target)
         {
-            Target.HP -= Damage;
+            target.HP -= Damage;
         }
 
         public bool isDead()

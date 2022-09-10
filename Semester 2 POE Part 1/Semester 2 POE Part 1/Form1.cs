@@ -22,5 +22,26 @@ namespace Semester_2_POE_Part_1
             Map m = new Map(10, 10, 10, 10, 3); 
         }
 
+        private void EnemyStatsTextbox_TextChanged(object sender, EventArgs e)
+        {
+            EnemyStatsTextbox.Text += "/n";
+            EnemyStatsTextbox.Text += Enemy.ToString(enemyInfo);
+        }
+
+        private void attackEnemyButton_Click(object sender, EventArgs e)
+        {
+            if(Character.CheckRange() == true)
+            {
+                Character.Attack();
+            }
+        }
+
+        private void SelectEnemy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(SelectEnemyDropDownList.Text == "Swamp Creature")
+            {
+                //idk man f this
+            }
+        }
     }
 }
