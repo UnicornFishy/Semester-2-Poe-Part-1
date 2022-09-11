@@ -39,7 +39,14 @@ namespace Semester_2_POE_Part_1
         {
             return enemies;
         }
-        public Hero Hero { get { return hero; } set { hero = value; } }
+
+        public void SetEnemies(Enemy[] e)
+        {
+            enemies = e;
+
+        }
+
+        public Hero Heroprop { get { return hero; } set { hero = value; } }
 
         public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
         {

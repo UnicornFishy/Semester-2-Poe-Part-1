@@ -22,29 +22,111 @@ namespace Semester_2_POE_Part_1
         {
             engine = new GameEngine();            
 
-            DisplayMap();           
+            DisplayMap();
+
+            engine.getMap().GetEnemies();
+
+            string[] entires = new string[engine.getMap().GetEnemies().Length];
+
+            for (int i = 0; i < entires.Length; i++) //drop down menu entries
+            {
+                entires[i] = engine.getMap().GetEnemies()[i].ToString();
+                SelectEnemyDropDownList.Items.Add(entires[i]);
+            }
+
+
+
+
         }
 
         private void EnemyStatsTextbox_TextChanged(object sender, EventArgs e)
         {
-            EnemyStatsTextbox.Text += "/n";
+            //EnemyStatsTextbox.Text += "/n";
             //EnemyStatsTextbox.Text += Enemy.ToString(enemyInfo);
+            
         }
 
         private void attackEnemyButton_Click(object sender, EventArgs e)
         {
-            //if(Character.CheckRange() == true)
+            if(SelectEnemyDropDownList.SelectedIndex == null)
             {
-                //Character.Attack();
+                return; // to catch any errors if nothing in entered
             }
+            try
+            {
+                if (engine.getMap().Heroprop.CheckRange(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]) == true)
+                {
+                    engine.getMap().Heroprop.Attack(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]);
+                    EnemyStatsTextbox.Text = "Attack Success";
+                    EnemyStatsTextbox.Text += engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].ToString();
+                    //check if enemies are dead, if they are dead create a new array without the dead ones
+                    //set enemies method to overwrite the eneimes array + update combobox
+                }
+                else
+                {
+                    EnemyStatsTextbox.Text = "Attack Failed";
+                }
+            }
+            catch(IndexOutOfRangeException exception)
+            {
+                EnemyStatsTextbox.Text = "Enemy is unalived";
+            }
+            
+
+            int tmp = -1;
+
+            for (int i = 0; i < engine.getMap().GetEnemies().Length; i++)
+            {
+                if (engine.getMap().GetEnemies()[i].isDead() == true)
+                {
+                    tmp = i;
+                }
+            }
+
+            if(tmp != -1)
+            {
+                Enemy[] noDeadEnemies = new Enemy[engine.getMap().GetEnemies().Length -1 ];
+                int j = 0;
+                bool tempbool = true;
+                for(int i = 0; i < engine.getMap().GetEnemies().Length; i++)
+                {
+                    //add all elements into new array except the dead one
+                    if(j == tmp && tempbool == true)
+                    {
+                        tempbool = false;
+                        
+                        continue;
+                    }
+                    noDeadEnemies[j] = engine.getMap().GetEnemies()[i];
+                    j++;
+                }
+
+                engine.getMap().SetEnemies(noDeadEnemies); //update the array to be the living enemies
+
+                string[] entires = new string[engine.getMap().GetEnemies().Length]; //drop down menu entries
+
+                SelectEnemyDropDownList.Items.Clear();
+
+                for (int i = 0; i < entires.Length; i++)
+                {
+                    entires[i] = engine.getMap().GetEnemies()[i].ToString();
+                    SelectEnemyDropDownList.Items.Add(entires[i]);
+                }
+
+            }
+            
+            
+
         }
 
         private void SelectEnemy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(SelectEnemyDropDownList.Text == "Swamp Creature")
-            {
+            //add iteams to the iteam array
+            //update ++ update on attack
+            //if (SelectEnemyDropDownList.Text == "Swamp Creature")
+            //{
                 //idk man f this
-            }
+            //}
         }
 
 
@@ -61,7 +143,7 @@ namespace Semester_2_POE_Part_1
                 mapDisplayTextBox.Text += Environment.NewLine;
             }
 
-            playerStatsLabel.Text = engine.getMap().Hero.ToString();
+            playerStatsLabel.Text = engine.getMap().Heroprop.ToString();
         }
 
         private void upButton_Click(object sender, EventArgs e)

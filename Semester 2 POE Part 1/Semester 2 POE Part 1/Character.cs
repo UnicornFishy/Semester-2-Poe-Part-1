@@ -96,7 +96,7 @@ namespace Semester_2_POE_Part_1
             int distY;
 
             distX = Math.Abs(Target.X - this.X);
-            distY = Math.Abs(Target.Y = this.Y);
+            distY = Math.Abs(Target.Y - this.Y);
 
             return distX + distY;
         }
