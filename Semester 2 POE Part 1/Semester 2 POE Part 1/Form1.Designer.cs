@@ -42,10 +42,10 @@
             // upButton
             // 
             this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.upButton.Location = new System.Drawing.Point(353, 181);
-            this.upButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.upButton.Location = new System.Drawing.Point(412, 237);
+            this.upButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(57, 57);
+            this.upButton.Size = new System.Drawing.Size(67, 75);
             this.upButton.TabIndex = 0;
             this.upButton.Text = "Up";
             this.upButton.UseVisualStyleBackColor = true;
@@ -54,10 +54,10 @@
             // leftButton
             // 
             this.leftButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.leftButton.Location = new System.Drawing.Point(284, 253);
-            this.leftButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leftButton.Location = new System.Drawing.Point(332, 331);
+            this.leftButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(57, 57);
+            this.leftButton.Size = new System.Drawing.Size(67, 75);
             this.leftButton.TabIndex = 1;
             this.leftButton.Text = "Left";
             this.leftButton.UseVisualStyleBackColor = true;
@@ -66,10 +66,10 @@
             // downButton
             // 
             this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.downButton.Location = new System.Drawing.Point(353, 253);
-            this.downButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.downButton.Location = new System.Drawing.Point(412, 331);
+            this.downButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(57, 57);
+            this.downButton.Size = new System.Drawing.Size(67, 75);
             this.downButton.TabIndex = 2;
             this.downButton.Text = "Down";
             this.downButton.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@
             // rightButton
             // 
             this.rightButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rightButton.Location = new System.Drawing.Point(423, 253);
-            this.rightButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rightButton.Location = new System.Drawing.Point(493, 331);
+            this.rightButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(57, 57);
+            this.rightButton.Size = new System.Drawing.Size(67, 75);
             this.rightButton.TabIndex = 3;
             this.rightButton.Text = "Right";
             this.rightButton.UseVisualStyleBackColor = true;
@@ -90,32 +90,31 @@
             // mapDisplayTextBox
             // 
             this.mapDisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mapDisplayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapDisplayTextBox.Location = new System.Drawing.Point(60, 32);
-            this.mapDisplayTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mapDisplayTextBox.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapDisplayTextBox.Location = new System.Drawing.Point(70, 42);
+            this.mapDisplayTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mapDisplayTextBox.Multiline = true;
             this.mapDisplayTextBox.Name = "mapDisplayTextBox";
             this.mapDisplayTextBox.ReadOnly = true;
-            this.mapDisplayTextBox.Size = new System.Drawing.Size(206, 277);
+            this.mapDisplayTextBox.Size = new System.Drawing.Size(240, 361);
             this.mapDisplayTextBox.TabIndex = 4;
             // 
             // playerStatsLabel
             // 
             this.playerStatsLabel.AutoSize = true;
-            this.playerStatsLabel.Location = new System.Drawing.Point(311, 32);
-            this.playerStatsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.playerStatsLabel.Location = new System.Drawing.Point(363, 42);
             this.playerStatsLabel.Name = "playerStatsLabel";
-            this.playerStatsLabel.Size = new System.Drawing.Size(144, 13);
+            this.playerStatsLabel.Size = new System.Drawing.Size(176, 17);
             this.playerStatsLabel.TabIndex = 5;
             this.playerStatsLabel.Text = "Player stats comes here wow";
             // 
             // EnemyStatsTextbox
             // 
-            this.EnemyStatsTextbox.Location = new System.Drawing.Point(482, 32);
-            this.EnemyStatsTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EnemyStatsTextbox.Location = new System.Drawing.Point(563, 42);
+            this.EnemyStatsTextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EnemyStatsTextbox.Name = "EnemyStatsTextbox";
             this.EnemyStatsTextbox.ReadOnly = true;
-            this.EnemyStatsTextbox.Size = new System.Drawing.Size(110, 157);
+            this.EnemyStatsTextbox.Size = new System.Drawing.Size(127, 204);
             this.EnemyStatsTextbox.TabIndex = 6;
             this.EnemyStatsTextbox.Text = "";
             this.EnemyStatsTextbox.TextChanged += new System.EventHandler(this.EnemyStatsTextbox_TextChanged);
@@ -123,19 +122,19 @@
             // SelectEnemyDropDownList
             // 
             this.SelectEnemyDropDownList.FormattingEnabled = true;
-            this.SelectEnemyDropDownList.Location = new System.Drawing.Point(489, 201);
-            this.SelectEnemyDropDownList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SelectEnemyDropDownList.Location = new System.Drawing.Point(571, 263);
+            this.SelectEnemyDropDownList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SelectEnemyDropDownList.Name = "SelectEnemyDropDownList";
-            this.SelectEnemyDropDownList.Size = new System.Drawing.Size(92, 21);
+            this.SelectEnemyDropDownList.Size = new System.Drawing.Size(106, 25);
             this.SelectEnemyDropDownList.TabIndex = 7;
             this.SelectEnemyDropDownList.SelectedIndexChanged += new System.EventHandler(this.SelectEnemy_SelectedIndexChanged);
             // 
             // attackEnemyButton
             // 
-            this.attackEnemyButton.Location = new System.Drawing.Point(508, 237);
-            this.attackEnemyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.attackEnemyButton.Location = new System.Drawing.Point(592, 310);
+            this.attackEnemyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attackEnemyButton.Name = "attackEnemyButton";
-            this.attackEnemyButton.Size = new System.Drawing.Size(56, 19);
+            this.attackEnemyButton.Size = new System.Drawing.Size(66, 25);
             this.attackEnemyButton.TabIndex = 8;
             this.attackEnemyButton.Text = "Attack";
             this.attackEnemyButton.UseVisualStyleBackColor = true;
@@ -143,9 +142,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 370);
+            this.ClientSize = new System.Drawing.Size(731, 484);
             this.Controls.Add(this.attackEnemyButton);
             this.Controls.Add(this.SelectEnemyDropDownList);
             this.Controls.Add(this.EnemyStatsTextbox);
@@ -155,7 +154,8 @@
             this.Controls.Add(this.downButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.upButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
