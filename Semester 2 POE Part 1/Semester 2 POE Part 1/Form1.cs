@@ -58,7 +58,14 @@ namespace Semester_2_POE_Part_1
                 {
                     engine.getMap().Heroprop.Attack(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]);
                     EnemyStatsTextbox.Text = "Attack Success";
+
                     EnemyStatsTextbox.Text += engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].ToString();
+                    if(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].isDead()== true) 
+                    {
+                        engine.getMap().GetMap()[engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y] = new EmptyTile(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y, ". ");
+                        DisplayMap();
+                        engine.getMap().UpdateVision(engine.getMap().Heroprop);
+                    }
                     //check if enemies are dead, if they are dead create a new array without the dead ones
                     //set enemies method to overwrite the eneimes array + update combobox
                 }
