@@ -26,12 +26,12 @@ namespace Semester_2_POE_Part_1
 
             engine.getMap().GetEnemies();
 
-            string[] entires = new string[engine.getMap().GetEnemies().Length];
+            string[] entires = new string[engine.getMap().GetEnemies().Length]; //getting string array of eneimes on form load
 
             for (int i = 0; i < entires.Length; i++) //drop down menu entries
             {
                 entires[i] = engine.getMap().GetEnemies()[i].ToString();
-                SelectEnemyDropDownList.Items.Add(entires[i]);
+                SelectEnemyDropDownList.Items.Add(entires[i]); //adding entires to drop down menu on form load
             }
 
 
@@ -55,7 +55,7 @@ namespace Semester_2_POE_Part_1
             try
             {
                 if (engine.getMap().Heroprop.CheckRange(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]) == true)
-                {
+                {   //to attack an enemy if one is selected and in range
                     engine.getMap().Heroprop.Attack(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]);
                     EnemyStatsTextbox.Text = "Attack Success!\n";
 
@@ -71,16 +71,16 @@ namespace Semester_2_POE_Part_1
                     //set enemies method to overwrite the eneimes array + update combobox
                 }
                 else
-                {
+                {   // if no enemy is in range
                     EnemyStatsTextbox.Text = "Attack Failed";
                 }
             }
             catch(IndexOutOfRangeException exception)
-            {
+            {   //if trying to attack an enemy thats dead
                 EnemyStatsTextbox.Text = "Enemy is unalived";
             }
             
-
+            //the code beneath here is to remove enemies from the current enemy array and drop down menu array if they die
             int tmp = -1;
 
             for (int i = 0; i < engine.getMap().GetEnemies().Length; i++)
@@ -122,8 +122,8 @@ namespace Semester_2_POE_Part_1
                 }
 
             }
-            
-            
+            //the code above here is to remove enemies from the current enemy array and drop down menu array if they die
+
 
         }
 

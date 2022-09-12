@@ -10,14 +10,14 @@ namespace Semester_2_POE_Part_1
     {
         public SwampCreature(int X, int Y) : base(X, Y, 1, 10, 10, "SC")
         {
-
+            //swamp creature constructor
         }
         public override movement ReturnMove(movement enemyMovementSwampCreature)
-        {
+        {   //creating random enemy movement
             Random rnd = new Random();
             int randomEnemyMovementDirection = rnd.Next(5);
 
-            switch (randomEnemyMovementDirection)
+            switch (randomEnemyMovementDirection)   //allowing enemies to move if they are unobstructed
             {
                 case 0:
                     if ((this.VISION[0] is Obstacle) || (this.VISION[0] is Hero))            // !Hero and !Obstacle do not work

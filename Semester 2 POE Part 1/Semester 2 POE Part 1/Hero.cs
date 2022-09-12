@@ -11,20 +11,21 @@ namespace Semester_2_POE_Part_1
 
         public Hero(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol) : base(X, Y, DAMAGE, HP, MaxHP, "H ")
         {
-
+            //hero contructor
         }
         public override string ToString()
         {
             //takes an displays the players information
             string heroInfo = "The heros stats: \n";
             heroInfo += "Hp: " + HP.ToString() +"/"+ maxHp.ToString() + "\n";
-            heroInfo += "Damage is: " + Damage.ToString() + "\n";
+            heroInfo += "Damage is: " + Damage.ToString() + "\n";                       // heros to string
             heroInfo += "Coordinates: [" + X.ToString() + "," + Y.ToString() + "]";
 
             return heroInfo;
         }
         public override movement ReturnMove(movement heroMovement)
-        {
+        { //heros return moveemthod overriding the original one
+            //only allows movement if not obstructed by an enemy or obstacle
             if(heroMovement == movement.right)
             {
                 if (!(this.VISION[3] is Enemy) && !(this.VISION[3] is Obstacle))

@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Semester_2_POE_Part_1
-{
+{ // character class 
     public abstract class Character : Tile
     {
         protected int hp;
-        protected int maxHp;
+        protected int maxHp;                    //protected variables followed by public variables
         protected int damage;
 
         public int HP { get { return hp; } set { hp = value; } }
@@ -17,8 +17,8 @@ namespace Semester_2_POE_Part_1
 
         public int Damage { get { return damage; } set { damage = value; } }
 
-        protected Tile[] vision = new Tile[4];
-        protected tileType tile;
+        protected Tile[] vision = new Tile[4];          //creating the vision variables contructors
+        protected tileType tile;                        //tiletype variables and contructors
 
         public Tile[] VISION { get { return vision; } set { vision = value; } }     //vision [ 0 , 1 , 2 , 3 ] = { up, down, left, right }
 
@@ -26,10 +26,10 @@ namespace Semester_2_POE_Part_1
         public tileType Tile { get { return tile; } set { tile = value; } }
 
 
-        private movement Movement;
+        private movement Movement;                  //creating the movement variables, getters + setters
         public movement MOVEMENT { get { return Movement; } set { Movement = value; } }
-        public enum movement { NoMovement, up, down, left, right }
-        public void Move(movement move)
+        public enum movement { NoMovement, up, down, left, right } //movement enum
+        public void Move(movement move) //switch case for the moment enum
         {
             switch (move)
             {
@@ -56,18 +56,18 @@ namespace Semester_2_POE_Part_1
             }
         }
 
-        public abstract movement ReturnMove(movement move = 0);
+        public abstract movement ReturnMove(movement move = 0); //return move method
 
         public virtual void Attack(Character target)
         {
-            target.HP -= Damage;
+            target.HP -= Damage; //attack method
         }
 
         public bool isDead()
         {
             if (HP <= 0)
             {
-                return true;
+                return true;        //isdead method
             }
             return false;
         }
@@ -75,7 +75,7 @@ namespace Semester_2_POE_Part_1
         public virtual bool CheckRange(Character target)
         {
             //needs to return true or false
-
+            //checks range of the character
             
             if(DistanceTo(target) > 1)
             {
@@ -91,7 +91,7 @@ namespace Semester_2_POE_Part_1
         }
 
         private int DistanceTo(Character Target)
-        {
+        {   //calculations for distance to 
             int distX;
             int distY;
 
@@ -101,14 +101,14 @@ namespace Semester_2_POE_Part_1
             return distX + distY;
         }
 
-        public abstract override string ToString();
+        public abstract override string ToString(); //overridding to string for hero and enemy
 
         public Character(int X, int Y, int DAMAGE, int HP, int MaxHP, string symbol)
         {
             this.x = X;
             this.y = Y;
             this.damage = DAMAGE;
-            this.hp = HP;
+            this.hp = HP;                   //character contructors
             this.maxHp = MaxHP;
             this.symbol = symbol;
             //This method is to denote whether or not the character is alive or dead. nested to not perma loop it.
