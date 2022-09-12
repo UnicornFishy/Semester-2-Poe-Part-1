@@ -107,10 +107,10 @@ namespace Semester_2_POE_Part_1
         {
             this.x = X;
             this.y = Y;
+            this.damage = DAMAGE;
             this.hp = HP;
             this.maxHp = MaxHP;
             this.symbol = symbol;
-            this.damage = DAMAGE;
             //This method is to denote whether or not the character is alive or dead. nested to not perma loop it.
            
         }

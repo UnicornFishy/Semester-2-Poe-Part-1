@@ -23,9 +23,9 @@ namespace Semester_2_POE_Part_1
         {
             //EnemyClassName at[X, Y] (Amount DMG)
             string enemyInfo = "The " + symbol; //need to add enemy name
-            enemyInfo += $"is at  + [{X.ToString()} {Y.ToString()}]";
-            enemyInfo += hp.ToString();
-            enemyInfo += "and it deals " + Damage.ToString() + " damage";
+            enemyInfo += $" at [{X.ToString()} {Y.ToString()}]";
+            enemyInfo += " is at " + hp.ToString() + "HP";
+            enemyInfo += " and was dealt " + Damage.ToString() + " damage";
 
             return enemyInfo;
         }

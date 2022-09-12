@@ -57,7 +57,7 @@ namespace Semester_2_POE_Part_1
                 if (engine.getMap().Heroprop.CheckRange(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]) == true)
                 {
                     engine.getMap().Heroprop.Attack(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex]);
-                    EnemyStatsTextbox.Text = "Attack Success";
+                    EnemyStatsTextbox.Text = "Attack Success!\n";
 
                     EnemyStatsTextbox.Text += engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].ToString();
                     if(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].isDead()== true) 

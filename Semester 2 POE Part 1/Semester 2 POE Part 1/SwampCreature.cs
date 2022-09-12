@@ -8,7 +8,7 @@ namespace Semester_2_POE_Part_1
 {
     class SwampCreature : Enemy
     {
-        public SwampCreature(int X, int Y) : base(X, Y, 10, 10, 1, "SC")
+        public SwampCreature(int X, int Y) : base(X, Y, 1, 10, 10, "SC")
         {
 
         }
