@@ -65,6 +65,7 @@ namespace Semester_2_POE_Part_1
                         engine.getMap().GetMap()[engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y] = new EmptyTile(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y, ". ");
                         DisplayMap();
                         engine.getMap().UpdateVision(engine.getMap().Heroprop);
+                        EnemyStatsTextbox.Text += "\nEnemy was killed";
                     }
                     //check if enemies are dead, if they are dead create a new array without the dead ones
                     //set enemies method to overwrite the eneimes array + update combobox
