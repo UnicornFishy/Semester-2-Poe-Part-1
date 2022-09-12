@@ -12,13 +12,13 @@ namespace Semester_2_POE_Part_1
 {
     public partial class Form1 : Form
     {
-        GameEngine engine;
+        GameEngine engine;  //declarations
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //creates game engine object, displays the map
         {
             engine = new GameEngine();            
 
@@ -60,7 +60,7 @@ namespace Semester_2_POE_Part_1
                     EnemyStatsTextbox.Text = "Attack Success!\n";
 
                     EnemyStatsTextbox.Text += engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].ToString();
-                    if(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].isDead()== true) 
+                    if(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].isDead()== true)     //removes dead enemy symbols from the map and updates the map display
                     {
                         engine.getMap().GetMap()[engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y] = new EmptyTile(engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].X, engine.getMap().GetEnemies()[SelectEnemyDropDownList.SelectedIndex].Y, ". ");
                         DisplayMap();
@@ -139,7 +139,7 @@ namespace Semester_2_POE_Part_1
 
 
 
-        private void DisplayMap()
+        private void DisplayMap()   //method to display map with symbols in a textbox
         {
             mapDisplayTextBox.Clear();
             for (int i = 0; i < engine.getMap().GetMapHeight(); i++)
@@ -154,27 +154,28 @@ namespace Semester_2_POE_Part_1
             playerStatsLabel.Text = engine.getMap().Heroprop.ToString();
         }
 
-        private void upButton_Click(object sender, EventArgs e)
+        private void upButton_Click(object sender, EventArgs e) //moves hero up 
         {
             engine.MovePlayer(Character.movement.up);
             engine.getMap().MapFill();
             DisplayMap();
         }
 
-        private void downButton_Click(object sender, EventArgs e)
+        private void downButton_Click(object sender, EventArgs e)   //moves hero down
         {
             engine.MovePlayer(Character.movement.down);
-            engine.getMap().MapFill(); 
+            engine.getMap().MapFill();      
+                                               
             DisplayMap();
         }
 
-        private void rightButton_Click(object sender, EventArgs e)
+        private void rightButton_Click(object sender, EventArgs e)  //moves hero right
         {
             engine.MovePlayer(Character.movement.right);
             engine.getMap().MapFill();
             DisplayMap();
         }
-        private void leftButton_Click(object sender, EventArgs e)
+        private void leftButton_Click(object sender, EventArgs e)   //moves hero left
         {
             engine.MovePlayer(Character.movement.left);
             engine.getMap().MapFill();
