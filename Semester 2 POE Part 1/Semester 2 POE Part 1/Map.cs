@@ -8,54 +8,54 @@ namespace Semester_2_POE_Part_1
 {
     internal class Map
     {
-        private Tile[,] map;
-        private int mapHeight;
-        private int mapWidth;
-        private Enemy[] enemies;
+        private Tile[,] map;    //declarations for the Map class
+        private int mapHeight;  
+        private int mapWidth;   
+        private Enemy[] enemies;    
         private Hero hero;
         private Random random = new Random();
 
-        public int GetMapHeight()
+        public int GetMapHeight()   //getter for the map's height
         {
             return mapHeight;
         }
 
-        public int GetMapWidth()
+        public int GetMapWidth()    //getter for the map's width
         {
             return mapWidth;
         }
 
-        public string GetSymbol(int X, int Y)
+        public string GetSymbol(int X, int Y)   //getter mthod to get the symbols on the map
         {
             return map[X, Y].Symbol;
         }
 
-        public Tile[,] GetMap()
+        public Tile[,] GetMap()     //getter for the map
         {
             return map;
         }
 
-        public Enemy[] GetEnemies()
+        public Enemy[] GetEnemies()     //getter for the enemies array
         {
             return enemies;
         }
 
-        public void SetEnemies(Enemy[] e)
+        public void SetEnemies(Enemy[] e)       //sets enemy array
         {
             enemies = e;
 
         }
 
-        public Hero Heroprop { get { return hero; } set { hero = value; } }
+        public Hero Heroprop { get { return hero; } set { hero = value; } }     
 
-        public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)
+        public Map(int minHeight, int maxHeight, int minWidth, int maxWidth, int enemyNumber)   //map constructor
         {
             this.mapHeight = random.Next(minHeight,maxHeight);
             this.mapWidth = random.Next(minWidth,maxWidth);
             map = new Tile[mapHeight,mapWidth];
             enemies = new Enemy[enemyNumber];
 
-            for (int i = 0; i < mapHeight; i++)
+            for (int i = 0; i < mapHeight; i++)     //sets the obstacles around the entire map
             {
                 for (int j = 0; j < mapWidth; j++)
                 {
@@ -67,13 +67,13 @@ namespace Semester_2_POE_Part_1
                 }
             }
 
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemies.Length; i++)    //creates and fills the enemies array
             {
                 enemies[i] = (Enemy)Create(Tile.tileType.Enemy);
                 map[enemies[i].X, enemies[i].Y] = enemies[i];
             }
 
-            hero = (Hero)Create(Tile.tileType.Hero);
+            hero = (Hero)Create(Tile.tileType.Hero);    //creates hero object
 
             map[hero.X, hero.Y] = hero;
             
@@ -88,7 +88,7 @@ namespace Semester_2_POE_Part_1
 
         }
 
-        public void UpdateVision(Character character)
+        public void UpdateVision(Character character)   //updates vision array for entered character
         {
            
 
@@ -104,12 +104,12 @@ namespace Semester_2_POE_Part_1
 
         }
 
-        private Tile Create(Tile.tileType type)
+        private Tile Create(Tile.tileType type) //create method for creating hero and enemies
         {
             int X;
             int Y;
             bool validPosition = false;
-            do
+            do   //loops to find an open spot on the map based on random coordinates
             {
                 X = random.Next(mapHeight);
                 Y = random.Next(mapWidth);
@@ -121,7 +121,7 @@ namespace Semester_2_POE_Part_1
 
             } while (validPosition == false);
 
-            switch (type)
+            switch (type)   //switch to create the right object based on type entered
             {
                 case Tile.tileType.Hero:
                     return new Hero(X, Y, 2, 10, 10, "H");
@@ -136,7 +136,7 @@ namespace Semester_2_POE_Part_1
             }
         }
 
-        public void MapFill()
+        public void MapFill()   //fills all the empty spaces on the map with empty tiles
         {
             for (int x = 0; x < mapHeight; x++)
             {

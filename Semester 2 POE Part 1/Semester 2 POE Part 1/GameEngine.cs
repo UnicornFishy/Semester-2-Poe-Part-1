@@ -8,15 +8,15 @@ namespace Semester_2_POE_Part_1
 {
     internal class GameEngine
     {
-        private Map gameMap;
+        private Map gameMap;    //delcarations
         public Map getMap() { return gameMap; }
 
-        public GameEngine()
+        public GameEngine()     //makes new map object
         {
             gameMap = new Map(5, 17, 5, 13, 5);
         }
 
-        public bool MovePlayer(Character.movement move)
+        public bool MovePlayer(Character.movement move) //checks if the attapted movement is valid, and if so, moves the hero in that direction
         {
             if (move == Character.movement.NoMovement) return false;
 
