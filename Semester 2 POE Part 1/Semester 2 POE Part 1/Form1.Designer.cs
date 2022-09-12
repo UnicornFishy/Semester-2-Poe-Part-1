@@ -42,9 +42,10 @@
             // upButton
             // 
             this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.upButton.Location = new System.Drawing.Point(471, 223);
+            this.upButton.Location = new System.Drawing.Point(353, 181);
+            this.upButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.upButton.Name = "upButton";
-            this.upButton.Size = new System.Drawing.Size(76, 70);
+            this.upButton.Size = new System.Drawing.Size(57, 57);
             this.upButton.TabIndex = 0;
             this.upButton.Text = "Up";
             this.upButton.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // leftButton
             // 
             this.leftButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.leftButton.Location = new System.Drawing.Point(379, 311);
+            this.leftButton.Location = new System.Drawing.Point(284, 253);
+            this.leftButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.leftButton.Name = "leftButton";
-            this.leftButton.Size = new System.Drawing.Size(76, 70);
+            this.leftButton.Size = new System.Drawing.Size(57, 57);
             this.leftButton.TabIndex = 1;
             this.leftButton.Text = "Left";
             this.leftButton.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // downButton
             // 
             this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.downButton.Location = new System.Drawing.Point(471, 311);
+            this.downButton.Location = new System.Drawing.Point(353, 253);
+            this.downButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.downButton.Name = "downButton";
-            this.downButton.Size = new System.Drawing.Size(76, 70);
+            this.downButton.Size = new System.Drawing.Size(57, 57);
             this.downButton.TabIndex = 2;
             this.downButton.Text = "Down";
             this.downButton.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // rightButton
             // 
             this.rightButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rightButton.Location = new System.Drawing.Point(564, 311);
+            this.rightButton.Location = new System.Drawing.Point(423, 253);
+            this.rightButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rightButton.Name = "rightButton";
-            this.rightButton.Size = new System.Drawing.Size(76, 70);
+            this.rightButton.Size = new System.Drawing.Size(57, 57);
             this.rightButton.TabIndex = 3;
             this.rightButton.Text = "Right";
             this.rightButton.UseVisualStyleBackColor = true;
@@ -86,28 +90,32 @@
             // mapDisplayTextBox
             // 
             this.mapDisplayTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mapDisplayTextBox.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapDisplayTextBox.Location = new System.Drawing.Point(80, 40);
+            this.mapDisplayTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapDisplayTextBox.Location = new System.Drawing.Point(60, 32);
+            this.mapDisplayTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mapDisplayTextBox.Multiline = true;
             this.mapDisplayTextBox.Name = "mapDisplayTextBox";
             this.mapDisplayTextBox.ReadOnly = true;
-            this.mapDisplayTextBox.Size = new System.Drawing.Size(274, 341);
+            this.mapDisplayTextBox.Size = new System.Drawing.Size(206, 277);
             this.mapDisplayTextBox.TabIndex = 4;
             // 
             // playerStatsLabel
             // 
             this.playerStatsLabel.AutoSize = true;
-            this.playerStatsLabel.Location = new System.Drawing.Point(415, 40);
+            this.playerStatsLabel.Location = new System.Drawing.Point(311, 32);
+            this.playerStatsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.playerStatsLabel.Name = "playerStatsLabel";
-            this.playerStatsLabel.Size = new System.Drawing.Size(180, 16);
+            this.playerStatsLabel.Size = new System.Drawing.Size(144, 13);
             this.playerStatsLabel.TabIndex = 5;
             this.playerStatsLabel.Text = "Player stats comes here wow";
             // 
             // EnemyStatsTextbox
             // 
-            this.EnemyStatsTextbox.Location = new System.Drawing.Point(643, 40);
+            this.EnemyStatsTextbox.Location = new System.Drawing.Point(482, 32);
+            this.EnemyStatsTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EnemyStatsTextbox.Name = "EnemyStatsTextbox";
-            this.EnemyStatsTextbox.Size = new System.Drawing.Size(145, 192);
+            this.EnemyStatsTextbox.ReadOnly = true;
+            this.EnemyStatsTextbox.Size = new System.Drawing.Size(110, 157);
             this.EnemyStatsTextbox.TabIndex = 6;
             this.EnemyStatsTextbox.Text = "";
             this.EnemyStatsTextbox.TextChanged += new System.EventHandler(this.EnemyStatsTextbox_TextChanged);
@@ -115,19 +123,19 @@
             // SelectEnemyDropDownList
             // 
             this.SelectEnemyDropDownList.FormattingEnabled = true;
-            this.SelectEnemyDropDownList.Items.AddRange(new object[] {
-            "Swamp Creature"});
-            this.SelectEnemyDropDownList.Location = new System.Drawing.Point(652, 247);
+            this.SelectEnemyDropDownList.Location = new System.Drawing.Point(489, 201);
+            this.SelectEnemyDropDownList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SelectEnemyDropDownList.Name = "SelectEnemyDropDownList";
-            this.SelectEnemyDropDownList.Size = new System.Drawing.Size(121, 24);
+            this.SelectEnemyDropDownList.Size = new System.Drawing.Size(92, 21);
             this.SelectEnemyDropDownList.TabIndex = 7;
             this.SelectEnemyDropDownList.SelectedIndexChanged += new System.EventHandler(this.SelectEnemy_SelectedIndexChanged);
             // 
             // attackEnemyButton
             // 
-            this.attackEnemyButton.Location = new System.Drawing.Point(678, 292);
+            this.attackEnemyButton.Location = new System.Drawing.Point(508, 237);
+            this.attackEnemyButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.attackEnemyButton.Name = "attackEnemyButton";
-            this.attackEnemyButton.Size = new System.Drawing.Size(75, 23);
+            this.attackEnemyButton.Size = new System.Drawing.Size(56, 19);
             this.attackEnemyButton.TabIndex = 8;
             this.attackEnemyButton.Text = "Attack";
             this.attackEnemyButton.UseVisualStyleBackColor = true;
@@ -135,9 +143,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 456);
+            this.ClientSize = new System.Drawing.Size(626, 370);
             this.Controls.Add(this.attackEnemyButton);
             this.Controls.Add(this.SelectEnemyDropDownList);
             this.Controls.Add(this.EnemyStatsTextbox);
@@ -147,6 +155,7 @@
             this.Controls.Add(this.downButton);
             this.Controls.Add(this.leftButton);
             this.Controls.Add(this.upButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

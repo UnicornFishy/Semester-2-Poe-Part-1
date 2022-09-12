@@ -20,13 +20,13 @@ namespace Semester_2_POE_Part_1
         {
             if (move == Character.movement.NoMovement) return false;
 
-            Character.movement dir = gameMap.Hero.ReturnMove(move);
+            Character.movement dir = gameMap.Heroprop.ReturnMove(move);
             if (dir == move)
             {
-                gameMap.GetMap()[gameMap.Hero.X, gameMap.Hero.Y] = new EmptyTile(gameMap.Hero.X, gameMap.Hero.Y, " . ");
-                gameMap.Hero.Move(move);
-                gameMap.GetMap()[gameMap.Hero.X, gameMap.Hero.Y] = gameMap.Hero;
-                gameMap.UpdateVision(gameMap.Hero);
+                gameMap.GetMap()[gameMap.Heroprop.X, gameMap.Heroprop.Y] = new EmptyTile(gameMap.Heroprop.X, gameMap.Heroprop.Y, " . ");
+                gameMap.Heroprop.Move(move);
+                gameMap.GetMap()[gameMap.Heroprop.X, gameMap.Heroprop.Y] = gameMap.Heroprop;
+                gameMap.UpdateVision(gameMap.Heroprop);
 
                 for (int i = 0; i < gameMap.GetEnemies().Length; i++)
                 {
